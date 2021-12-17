@@ -1,0 +1,31 @@
+version: '3.5'
+services:
+  redis:   
+    image: redis:latest
+    container_name: redis
+    restart: always
+    command: redis-server --requirepass admin-survey --appendonly yes
+    ports:
+      - 6379:6379
+    networks:
+      - backend-services-network
+
+  survey-reports-api:
+    image: charandetkrathok/survey-reports-api:latest
+    container_name: survey-reports-api
+    restart: always
+    depends_on:
+      - redis
+    ports:
+      - 8881:8881
+    networks:
+      - backend-services-network
+
+networks:
+  backend-services-network:
+    driver: bridge
+
+     
+# docker run --restart=always  -d --name survey -p 8881:8881 survey-reports-api:latest
+# docker run --name survey-reports-api-redis -p 6379:6379 redis:latest redis-server --requirepass "admin-survey"
+
