@@ -79,7 +79,7 @@ func getClaims(encodedToken string) (*ClaimsToken, error) {
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 			return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
 		}
-		return []byte("S!U@R#V$E%Y~S!U@R#V$E%Y~S!U@R#V$E%Y"), nil
+		return []byte("ใส่ Signature ตรงนี้"), nil
 	})
 	if err != nil {
 		return nil, errorsHandlers.NewUnauthorizedError()
