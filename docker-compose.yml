@@ -26,6 +26,4 @@ networks:
     driver: bridge
 
      
-# docker run --restart=always  -d --name survey -p 8881:8881 survey-reports-api:latest
-# docker run --name survey-reports-api-redis -p 6379:6379 redis:latest redis-server --requirepass "xxxxxxxxxxxxxxxx"
 
