@@ -28,23 +28,7 @@ func (c *connection) RedisConnection() *redis.Client {
 
 func (c *connection) OracleConnection() (*sqlx.DB, error) {
 
-	dns := `user="scenter01" 
-	password="scenter01new" 
-	connectString="10.2.1.98:1571/RUBRAM?expire_timconnect_time=2"
-	sysdba=0
-	sysoper=0
-	poolMinSessions=1
-	poolMaxSessions=1000
-	poolIncrement=1
-	standaloneConnection=0
-	enableEvents=0
-	heterogeneousPool=0
-	externalAuth=0
-	prelim=0
-	poolWaitTimeout=5m
-	poolSessionMaxLifetime=1h
-	poolSessionTimeout=30s
-	timezone="local"`
+	dns := `ใส่ data sourse name ตรงนี้`
 	
 	driver := "godror"
 
