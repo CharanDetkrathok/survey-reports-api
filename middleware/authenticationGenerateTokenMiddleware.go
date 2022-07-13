@@ -41,7 +41,7 @@ func GenerateToken(role string, user string, detail string) (*TokenAuthMiddlewar
 	accessTokenHeaderAndPayload := jwt.NewWithClaims(jwt.SigningMethodHS256, accessTokenClaims)
 
 	// map claims(payload) และ has algorithm (header) เข้ากับ Signature key
-	NEW_ACCESS_TOKEN, err := accessTokenHeaderAndPayload.SignedString([]byte("S!U@R#V$E%Y~S!U@R#V$E%Y~S!U@R#V$E%Y"))
+	NEW_ACCESS_TOKEN, err := accessTokenHeaderAndPayload.SignedString([]byte("ใส่ Signature ตรงนี้"))
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func GenerateToken(role string, user string, detail string) (*TokenAuthMiddlewar
 	refreshTokenHeaderAndPayload := jwt.NewWithClaims(jwt.SigningMethodHS256, refreshTokenClaims)
 
 	// map claims(payload) และ has algorithm (header) เข้ากับ Signature key
-	NEW_REFRESH_TOKEN, err := refreshTokenHeaderAndPayload.SignedString([]byte("S!U@R#V$E%Y~S!U@R#V$E%Y~S!U@R#V$E%Y"))
+	NEW_REFRESH_TOKEN, err := refreshTokenHeaderAndPayload.SignedString([]byte("ใส่ Signature ตรงนี้"))
 	if err != nil {
 		return nil, err
 	}
